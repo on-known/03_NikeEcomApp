@@ -15,7 +15,7 @@ class IntroPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/nike1.png',
+                'assets/nike.png',
                 // height: ,
                 // width: 100,
               ),
