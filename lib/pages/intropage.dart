@@ -71,4 +71,3 @@ class IntroPage extends StatelessWidget {
   }
 }
 
-///Users/hjdev/Documents/Downloads/flutter projects/ecommerce_app_13apr2024/lib/images/logo.jpg
