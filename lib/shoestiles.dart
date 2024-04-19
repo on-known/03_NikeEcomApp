@@ -1,10 +1,11 @@
-import 'package:ecommerce_app_13apr2024/models/shoes.dart';
-import 'package:flutter/material.dart';
+import 'package:ecommerce_app_13apr2024/models/shoes.dart'; // Importing the Shoes model
+import 'package:flutter/material.dart'; // Importing Flutter material package
 
 class ShoesTiles extends StatelessWidget {
-  const ShoesTiles({super.key, required this.shoes});
+  const ShoesTiles(
+      {super.key, required this.shoes}); // Constructor for ShoesTiles widget
 
-  final Shoes shoes;
+  final Shoes shoes; // Instance of Shoes class to hold shoes data
 
   @override
   Widget build(BuildContext context) {
@@ -14,29 +15,31 @@ class ShoesTiles extends StatelessWidget {
       ),
       width: 280,
       decoration: BoxDecoration(
-        color: Colors.grey[100],
-        borderRadius: BorderRadius.circular(12),
+        color: Colors.grey[100], // Setting background color for the container
+        borderRadius: BorderRadius.circular(
+            12), // Setting border radius for the container
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //image path
+          // Image path
           SizedBox(
-            height: MediaQuery.of(context).size.height * .35,
+            height: MediaQuery.of(context).size.height *
+                .35, // Setting height for the image container
             width: double.infinity,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(
+                  12), // Setting border radius for the image
               child: Image.asset(
-                shoes.imagePath,
-                fit: BoxFit.cover,
+                shoes.imagePath, // Loading image from asset
+                fit: BoxFit.cover, // Fitting the image within the container
               ),
             ),
           ),
-          //descrition
-          Text(shoes.description),
+          // Description
+          Text(shoes.description), // Displaying shoe description
 
-          //price + details
-
+          // Price + details
           Padding(
             padding: const EdgeInsets.only(
               left: 25,
@@ -49,7 +52,7 @@ class ShoesTiles extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      shoes.name,
+                      shoes.name, // Displaying shoe name
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
@@ -58,7 +61,7 @@ class ShoesTiles extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 5, top: 5),
                       child: Text(
-                        shoes.price,
+                        shoes.price, // Displaying shoe price
                         style: const TextStyle(
                           color: Colors.grey,
                           fontSize: 20,
@@ -70,7 +73,8 @@ class ShoesTiles extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: const BoxDecoration(
-                    color: Colors.black,
+                    color: Colors
+                        .black, // Setting background color for the container
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(12),
                       bottomRight: Radius.circular(
@@ -79,8 +83,8 @@ class ShoesTiles extends StatelessWidget {
                     ),
                   ),
                   child: const Icon(
-                    Icons.add,
-                    color: Colors.white,
+                    Icons.add, // Add icon
+                    color: Colors.white, // Icon color
                   ),
                 ),
               ],

@@ -1,52 +1,62 @@
-import 'package:ecommerce_app_13apr2024/models/shoes.dart';
+import 'package:ecommerce_app_13apr2024/models/shoes.dart'; // Importing the Shoes model
 import 'package:ecommerce_app_13apr2024/shoestiles.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; // Importing Flutter material package
 
 class ShopPage extends StatelessWidget {
-  const ShopPage({super.key});
+  const ShopPage({super.key}); // Constructor for ShopPage widget
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Scaffold widget for the page layout
       body: Column(
+        // Column layout for vertical arrangement
         children: [
-          //search bar
+          // Search bar
           Container(
-            padding: const EdgeInsets.all(
-              12,
-            ),
+            padding:
+                const EdgeInsets.all(12), // Setting padding for the container
             decoration: BoxDecoration(
-              color: Colors.grey[100],
+              color: Colors
+                  .grey[100], // Setting background color for the container
             ),
             child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // Row layout for horizontal arrangement
+              mainAxisAlignment: MainAxisAlignment
+                  .spaceBetween, // Aligning children evenly horizontally
               children: [
-                Text("Search"),
+                Text("Search"), // Search text
                 Icon(
-                  Icons.search,
+                  Icons.search, // Search icon
                 ),
               ],
             ),
           ),
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 25),
-            child: Text("Just Do App: Step into Greatness with Nike Shoes"),
+            padding:
+                EdgeInsets.symmetric(vertical: 25), // Setting vertical padding
+            child: Text(
+                "Just Do App: Step into Greatness with Nike Shoes"), // App title text
           ),
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25.0),
+            padding: EdgeInsets.symmetric(
+                horizontal: 25.0), // Setting horizontal padding
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
+              // Row layout for horizontal arrangement
+              mainAxisAlignment: MainAxisAlignment
+                  .spaceBetween, // Aligning children evenly horizontally
+              crossAxisAlignment: CrossAxisAlignment
+                  .end, // Aligning children at the bottom vertically
               children: [
                 Text(
-                  "Hot Picks🔥",
+                  "Hot Picks🔥", // Hot picks title text
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
                   ),
                 ),
                 Text(
-                  "See all",
+                  "See all", // "See all" text
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.blue,
@@ -60,11 +70,13 @@ class ShopPage extends StatelessWidget {
             height: 10,
           ),
           Expanded(
+            // Expanded widget to take remaining space
             child: ListView.builder(
-                itemCount: 4,
-                scrollDirection: Axis.horizontal,
+                // ListView.builder for horizontal scrolling list
+                itemCount: 4, // Setting item count
+                scrollDirection: Axis.horizontal, // Setting scroll direction
                 itemBuilder: (context, index) {
-                  //create shoes
+                  // Creating shoes
                   Shoes shoes = Shoes(
                       name: "Jorden",
                       price: "\$129",
@@ -72,7 +84,8 @@ class ShopPage extends StatelessWidget {
                       imagePath: "assets/shoes1.jpeg");
 
                   return ShoesTiles(
-                    shoes: shoes,
+                    // Displaying ShoesTiles widget
+                    shoes: shoes, // Passing shoes data to ShoesTiles
                   );
                 }),
           ),
