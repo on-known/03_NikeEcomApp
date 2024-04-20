@@ -1,8 +1,13 @@
+import 'package:ecommerce_app_13apr2024/models/cart.dart';
 import 'package:ecommerce_app_13apr2024/pages/intropage.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => cart(),
+    builder: (context, child) => const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -29,8 +34,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+
         scaffoldBackgroundColor: Colors.grey[300],
       ),
       home: const IntroPage(),
