@@ -3,9 +3,12 @@ import 'package:flutter/material.dart'; // Importing Flutter material package
 
 class ShoesTiles extends StatelessWidget {
   const ShoesTiles(
-      {super.key, required this.shoes}); // Constructor for ShoesTiles widget
+      {super.key,
+      required this.shoes,
+      required this.onPressed}); // Constructor for ShoesTiles widget
 
-  final Shoes shoes; // Instance of Shoes class to hold shoes data
+  final Shoes shoes;
+  final VoidCallback onPressed; // Instance of Shoes class to hold shoes data
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +49,7 @@ class ShoesTiles extends StatelessWidget {
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
+              //crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,21 +73,24 @@ class ShoesTiles extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  decoration: const BoxDecoration(
-                    color: Colors
-                        .black, // Setting background color for the container
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(12),
-                      bottomRight: Radius.circular(
-                        12,
+                GestureDetector(
+                  onTap: onPressed,
+                  child: Container(
+                    padding: const EdgeInsets.all(20),
+                    decoration: const BoxDecoration(
+                      color: Colors
+                          .black, // Setting background color for the container
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(
+                          12,
+                        ),
                       ),
                     ),
-                  ),
-                  child: const Icon(
-                    Icons.add, // Add icon
-                    color: Colors.white, // Icon color
+                    child: const Icon(
+                      Icons.add, // Add icon
+                      color: Colors.white, // Icon color
+                    ),
                   ),
                 ),
               ],
